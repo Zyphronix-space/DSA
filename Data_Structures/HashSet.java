@@ -1,0 +1,39 @@
+import java.util.LinkedHashSet;
+import java.util.SequencedSet;
+
+public class hashSet {
+    public static void main(String[] args) {
+        // LinkedHashSet now implements SequencedSet in Java 21
+        SequencedSet<String> countries = new LinkedHashSet<>();
+
+        // Add elements
+        countries.addFirst("India");
+        countries.addLast("USA");
+        countries.add("Canada"); // same as addLast
+
+        System.out.println("Original Order:");
+        for (String country : countries) {
+            System.out.println(country);
+        }
+
+        // Accessing first and last elements
+        System.out.println("\nFirst Element: " + countries.getFirst());
+        System.out.println("Last Element: " + countries.getLast());
+
+        // Reversed view
+        SequencedSet<String> reversed = countries.reversed();
+        System.out.println("\nReversed Order:");
+        for (String country : reversed) {
+            System.out.println(country);
+        }
+
+        // Removing first and last
+        countries.removeFirst();
+        countries.removeLast();
+
+        System.out.println("\nAfter Removing First and Last:");
+        for (String country : countries) {
+            System.out.println(country);
+        }
+    }
+}
