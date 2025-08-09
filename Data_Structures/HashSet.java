@@ -1,39 +1,41 @@
-import java.util.LinkedHashSet;
-import java.util.SequencedSet;
+import java.util.HashSet;
+import java.util.Set;
 
-public class hashSet {
+/**
+ *
+ * @author ASUS
+ */
+public class LinkedHashSet {
     public static void main(String[] args) {
-        // LinkedHashSet now implements SequencedSet in Java 21
-        SequencedSet<String> countries = new LinkedHashSet<>();
+        // Create a Set using HashSet
+        Set<String> animals = new HashSet<>();
 
-        // Add elements
-        countries.addFirst("India");
-        countries.addLast("USA");
-        countries.add("Canada"); // same as addLast
+        // Add elements to the set
+        animals.add("Dog");
+        animals.add("Cat");
+        animals.add("Charlie");
+        animals.add("Dog"); // Duplicate - will not be added
 
-        System.out.println("Original Order:");
-        for (String country : countries) {
-            System.out.println(country);
+        // Display the set
+        System.out.println("Set elements:");
+        for (String animal : animals) {
+            System.out.println(animal);
         }
 
-        // Accessing first and last elements
-        System.out.println("\nFirst Element: " + countries.getFirst());
-        System.out.println("Last Element: " + countries.getLast());
-
-        // Reversed view
-        SequencedSet<String> reversed = countries.reversed();
-        System.out.println("\nReversed Order:");
-        for (String country : reversed) {
-            System.out.println(country);
+        // Check if an element exists
+        if (animals.contains("Cat")) {
+            System.out.println("\nCat is in the set.");
         }
 
-        // Removing first and last
-        countries.removeFirst();
-        countries.removeLast();
+        // Remove an element
+        animals.remove("Charlie");
 
-        System.out.println("\nAfter Removing First and Last:");
-        for (String country : countries) {
-            System.out.println(country);
-        }
+        // Check the size of the set
+        System.out.println("\nSize of set after removal: " + animals.size());
+
+        // Clear the set
+        animals.clear();
+        System.out.println("\nSet after clearing: " + animals);
     }
 }
+
