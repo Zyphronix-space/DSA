@@ -1,39 +1,42 @@
 import java.util.LinkedList;
-import java.util.SequencedCollection;
+import java.util.Iterator;
 
 public class linkedList {
     public static void main(String[] args) {
-        // LinkedList now implements SequencedCollection in Java 21
-        SequencedCollection<String> colors = new LinkedList<>();
+        // Create a LinkedList of Strings
+        LinkedList<String> fruits = new LinkedList<>();
 
-        // Add elements
-        colors.addFirst("Red");
-        colors.addLast("Blue");
-        colors.add("Green"); // equivalent to addLast
+        // Adding elements
+        fruits.add("Apple");
+        fruits.add("Banana");
+        fruits.add("Mango");
+        fruits.add("Orange");
 
-        System.out.println("Original Order:");
-        for (String color : colors) {
-            System.out.println(color);
-        }
+        // Adding element at the first position
+        fruits.addFirst("Strawberry");
 
-        // Get first and last elements
-        System.out.println("\nFirst Element: " + colors.getFirst());
-        System.out.println("Last Element: " + colors.getLast());
+        // Adding element at the last position
+        fruits.addLast("Grapes");
 
-        // Reversed view
-        SequencedCollection<String> reversed = colors.reversed();
-        System.out.println("\nReversed Order:");
-        for (String color : reversed) {
-            System.out.println(color);
-        }
+        // Display the LinkedList
+        System.out.println("Fruits list: " + fruits);
 
-        // Remove first and last
-        colors.removeFirst();
-        colors.removeLast();
+        // Accessing elements
+        System.out.println("First fruit: " + fruits.getFirst());
+        System.out.println("Last fruit: " + fruits.getLast());
 
-        System.out.println("\nAfter removing first and last:");
-        for (String color : colors) {
-            System.out.println(color);
+        // Removing elements
+        fruits.remove("Banana"); // by value
+        fruits.removeFirst();    // first element
+        fruits.removeLast();     // last element
+
+        System.out.println("After removals: " + fruits);
+
+        // Iterating using iterator
+        System.out.println("Iterating through LinkedList:");
+        Iterator<String> iterator = fruits.iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
         }
     }
 }
