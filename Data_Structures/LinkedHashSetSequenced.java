@@ -5,7 +5,7 @@ import java.util.SequencedSet;
  *
  * @author ASUS
  */
-public class LinkedHashSetSequened {
+public class LinkedHashSetSequenced {
     public static void main(String[] args) {
         // LinkedHashSet now implements SequencedSet in Java 21
         SequencedSet<String> countries = new LinkedHashSet<>();

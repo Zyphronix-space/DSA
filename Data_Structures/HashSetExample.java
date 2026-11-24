@@ -5,7 +5,7 @@ import java.util.Set;
  *
  * @author ASUS
  */
-public class LinkedHashSet {
+public class HashSetExample {
     public static void main(String[] args) {
         // Create a Set using HashSet
         Set<String> animals = new HashSet<>();
